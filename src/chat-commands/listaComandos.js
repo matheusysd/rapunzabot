@@ -6,10 +6,12 @@ const comandos = {
     bot: () => "/me O Rapunzel me criou pra ajudar aqui nessa stream mas tô com outros planos pro futuro 😈",
     cor: async (cor) => {
         if (colors.hasOwnProperty(cor)) {
-            await light.setColor(colors[cor][0], colors[cor][1], colors[cor][2])
+            const success = await light.setColor(colors[cor][0], colors[cor][1], colors[cor][2])
             //.then((success) => (console.log(success))
             //).catch(error => console.error(error));
-            return `/me Mudando a cor da luz para ${cor}.`;
+            
+            // return `/me Mudando a cor da luz para ${cor}.`;
+            return `Status ${success}`;
         }
         else {
             if (cor === 'preto' || cor === 'preta') {
