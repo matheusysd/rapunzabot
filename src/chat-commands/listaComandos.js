@@ -6,8 +6,8 @@ const comandos = {
     bot: () => "/me O Rapunzel me criou pra ajudar aqui nessa stream mas tô com outros planos pro futuro 😈",
     cor: (cor) => {
         if (colors.hasOwnProperty(cor)) {
-            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => console.log(`Cor alterada para ${colors[cor]}`)).catch(error => console.log(error));
-            return (`/me Mudando a cor da luz para ${cor}.`);
+            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => (`/me Mudando a cor da luz para ${cor}.`)
+            ).catch(error => console.log(error));
         }
         else {
             if (cor === 'preto' || cor === 'preta') {
@@ -23,7 +23,7 @@ const comandos = {
     },
     cores: () => `/me As cores disponíveis no momento são: ${Object.keys(colors).join(', ')}. Se tem alguma sugestão fala ai.`,
     reyna: () => {
-        light.setColor(127,0,255).then((success) => console.log(success)).catch(error => console.error(error));
+        light.setColor(127, 0, 255).then((success) => console.log(success)).catch(error => console.error(error));
         return "/me Eles vão temer 😈 "
     },
     headset: () => "/me Redragron Zeus Sakura",
