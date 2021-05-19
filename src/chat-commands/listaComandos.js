@@ -6,8 +6,9 @@ const comandos = {
     bot: () => "/me O Rapunzel me criou pra ajudar aqui nessa stream mas tô com outros planos pro futuro 😈",
     cor: (cor) => {
         if (colors.hasOwnProperty(cor)) {
-            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => (`/me Mudando a cor da luz para ${cor}.`)
+            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => (console.log(success))
             ).catch(error => console.log(error));
+            return `/me Mudando a cor da luz para ${cor}.`;
         }
         else {
             if (cor === 'preto' || cor === 'preta') {
@@ -38,7 +39,6 @@ const comandos = {
     sociais: () => "/me Twitter ~> twitter.com/_rapunzelo Insta ~> instagram.com/matheus.yurisd/",
     twitter: () => "/me segue o pai lá https://twitter.com/_rapunzelo",
     voosm: () => "/me Da uma moral pro voosm lá ~> https://www.twitch.tv/vooosm",
-    light: () => JSON.stringify(light),
 }
 
 module.exports = comandos;
