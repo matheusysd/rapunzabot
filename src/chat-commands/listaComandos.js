@@ -38,6 +38,7 @@ const comandos = {
     sociais: () => "/me Twitter ~> twitter.com/_rapunzelo Insta ~> instagram.com/matheus.yurisd/",
     twitter: () => "/me segue o pai lá https://twitter.com/_rapunzelo",
     voosm: () => "/me Da uma moral pro voosm lá ~> https://www.twitch.tv/vooosm",
+    light: () => JSON.stringify(light),
 }
 
 module.exports = comandos;
