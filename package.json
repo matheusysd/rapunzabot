@@ -1,16 +1,21 @@
 {
-  "name": "testStream",
+  "name": "RapunzaBot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A twitch bot that controls some interactive lights.",
+  "main": "bot.js",
   "scripts": {
+    "start": "cd src && node bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Matheus Domingos",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "magic-home": "^2.6.1",
     "tmi.js": "^1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
