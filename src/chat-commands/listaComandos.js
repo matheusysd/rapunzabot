@@ -4,10 +4,11 @@ const light = require('../magic-home/magic-home');
 
 const comandos = {
     bot: () => "/me O Rapunzel me criou pra ajudar aqui nessa stream mas tô com outros planos pro futuro 😈",
-    cor: (cor) => {
+    cor: async (cor) => {
         if (colors.hasOwnProperty(cor)) {
-            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => (console.log(success))
-            ).catch(error => console.log(error));
+            await light.setColor(colors[cor][0], colors[cor][1], colors[cor][2])
+            //.then((success) => (console.log(success))
+            //).catch(error => console.error(error));
             return `/me Mudando a cor da luz para ${cor}.`;
         }
         else {
