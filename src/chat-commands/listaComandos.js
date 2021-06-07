@@ -4,14 +4,10 @@ const light = require('../magic-home/magic-home');
 
 const comandos = {
     bot: () => "/me O Rapunzel me criou pra ajudar aqui nessa stream mas tô com outros planos pro futuro 😈",
-    cor: async (cor) => {
+    cor: (cor) => {
         if (colors.hasOwnProperty(cor)) {
-            const success = await light.setColor(colors[cor][0], colors[cor][1], colors[cor][2])
-            //.then((success) => (console.log(success))
-            //).catch(error => console.error(error));
-            
-            // return `/me Mudando a cor da luz para ${cor}.`;
-            return `Status ${success}`;
+            light.setColor(colors[cor][0], colors[cor][1], colors[cor][2]).then((success) => (console.log(success))).catch(error => console.error(error));
+            return `/me Mudando a cor da luz para ${cor}.`;
         }
         else {
             if (cor === 'preto' || cor === 'preta') {
@@ -25,7 +21,10 @@ const comandos = {
             }
         }
     },
-    cores: () => `/me As cores disponíveis no momento são: ${Object.keys(colors).join(', ')}. Se tem alguma sugestão fala ai.`,
+    cores: () => {
+        const cores = Object.keys(colors).join(', ')
+        return `/me As cores disponíveis no momento são: ${this.cores}. Se tem alguma sugestão fala ai.`
+    },
     reyna: () => {
         light.setColor(127, 0, 255).then((success) => console.log(success)).catch(error => console.error(error));
         return "/me Eles vão temer 😈 "
@@ -38,10 +37,11 @@ const comandos = {
     nt: () => "/me nem tentou",
     operator: () => "/me rapunzel de operator 🤝 ganhamo",
     pc: () => "/me i5-10400F 16GB GTX 1660 SUPER mais informações na descrição do canal",
-    rank: () => "/me PLAT 3",
     sociais: () => "/me Twitter ~> twitter.com/_rapunzelo Insta ~> instagram.com/matheus.yurisd/",
     twitter: () => "/me segue o pai lá https://twitter.com/_rapunzelo",
     voosm: () => "/me Da uma moral pro voosm lá ~> https://www.twitch.tv/vooosm",
+    rank: () => "/me Plat 3",
+    elo: () => "/me Plat 3"
 }
 
 module.exports = comandos;
